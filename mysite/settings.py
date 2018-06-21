@@ -25,7 +25,7 @@ SECRET_KEY = '9%jwvo8s%yqd!pg@$-b-#@rfhx61g4-1w@iyrkwipuqvria^kh'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-
+ALLOWED_HOSTS = ['127.0.0.1', 'voronoi.pythonanywhere.com']
 
 # Application definition
 
@@ -80,7 +80,7 @@ DATABASES = {
     }
 }
 
-ALLOWED_HOSTS = ['127.0.0.1', 'voronoi.pythonanywhere.com']
+
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
