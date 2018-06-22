@@ -1,0 +1,65 @@
+<html>
+
+<head>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-top-width:1px;border-bottom-width:1px;border-color:#ccc;color:#333;background-color:#fff;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-top-width:1px;border-bottom-width:1px;border-color:#ccc;color:#333;background-color:#f0f0f0;}
+.tg .tg-lmdf{font-size:12px;font-family:"Times New Roman", Times, serif !important;;vertical-align:top}
+.tg .tg-yw4l{vertical-align:top}
+.tg .tg-b7b8{background-color:#f9f9f9;vertical-align:top}
+
+div {left : 20%; margin-top:5%; margin-bottom: 5%;}
+#btn { display:inline; margin-left: 10%; font-size: 24px;}
+h1 { display:inline; position:relative;  margin-top:5%; left : 30%; }
+table { margin-right: auto; margin-left: auto;  width:80%; }
+
+</style>
+
+<script>
+	
+	function index(){
+		location.href = "voronoi.pythonanywhere.com";
+	}
+</script> 
+
+</head>
+<body>
+
+	<div>
+		<input type="button" onclick="index();" value="◀ back" id="btn" />
+		<h1>search result</h1>	
+	</div>
+	
+	<table class="tg">
+	<tr >
+	 <th class="tg-lmdf"><b>publisher</b></th>
+	    <th class="tg-yw4l"><b>title_hangul</b></th>
+	    <th class="tg-yw4l"><b>title_hanja</b></th>
+	    <th class="tg-yw4l"><b>date</b></th>
+	    <th class="tg-yw4l"><b>major</b></th>
+	    <th class="tg-yw4l"><b>middle</b></th>
+	    <th class="tg-yw4l"><b>keywords</b></th>
+	    <th class="tg-yw4l"><b>imagelink</b></th>
+	    <th class="tg-yw4l"><b>code</b></th>	
+	</tr>
+	{% for newspaper in response %}
+	  <tr>
+	    <th class="tg-lmdf">{{newspaper.publisher}}</th>
+	    <th class="tg-yw4l">{{newspaper.title_hangul}}</th>
+	    <th class="tg-yw4l">{{newspaper.title_hanja}}</th>
+	    <th class="tg-yw4l">{{newspaper.date}}</th>
+	    <th class="tg-yw4l">{{newspaper.major}}</th>
+	    <th class="tg-yw4l">{{newspaper.middle}}</th>
+	    <th class="tg-yw4l">{{newspaper.keywords}}</th>
+	    <th class="tg-yw4l"><a href="{{newspaper.imagelink}}">link</a></th>
+	    <th class="tg-yw4l">{{newspaper.code}}</th>
+
+	  </tr>
+	  {% endfor%}
+	  
+	</table>
+	
+	
+</body>
+</html>

@@ -16,11 +16,34 @@
 
 </style>
 </head>
-	
+
+<body>	
+	<script>
+    function check(){
+    	var keyword = document.forms["search"]['keyword'].value;
+    	
+    	if(keyword == ""){
+    		alert("검색어를 입력하세요");
+    		return false;
+    	}else{
+    		return true;
+    	}
+
+
+    }
+	</script>
+
+
 	<h1>Newspaper Search Page</h1>
-	<form>
-		<input type="text" name="keywords" placeholder="키워드를 입력하세요"/>
-		<input type="submit" value="Submit">
+
+	
+	<form name="search" method="GET" action='/search' onsubmit="return check()">
+		<input type="text" name="keyword" placeholder="키워드를 입력하세요"/>
+		<input type="submit" value="search" />
 	</form>
 
+
+
+
+</body>
 </html>
